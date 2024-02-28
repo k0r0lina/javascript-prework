@@ -23,12 +23,17 @@ function getMoveName(argMoveId) {
     return 'nożyce';
   }
 }
+const randomNumber = Math.floor(Math.random() * 3 + 1);
+  console.log('wylosowana liczba to: ' + randomNumber);
+const computerMove = getMoveName(randomNumber);
+  console.log('ruch komputera to: ' + computerMove);
 
 /**
  * Game results
  */
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
+  
   if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
     printMessage('Wygrywasz!');
   } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
@@ -42,10 +47,6 @@ function displayResult(argPlayerMove, argComputerMove) {
   }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
-const randomNumber = Math.floor(Math.random() * 3 + 1);
-  console.log('wylosowana liczba to: ' + randomNumber);
-const computerMove = getMoveName(randomNumber);
-  console.log('ruch komputera to: ' + computerMove);
 displayResult(playerMove, computerMove);
 }
 
